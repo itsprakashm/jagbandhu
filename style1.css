@@ -1,0 +1,34 @@
+.mainbox {
+    position: relative;
+    width: 400px;
+    height: 400px;
+  }
+  
+  text{
+    font-family:Helvetica, Arial, sans-serif;
+    font-size:15px;
+    pointer-events:none;
+}
+#chart{
+    position:absolute;
+    width:500px;
+    height:500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body {
+  font-family: Open Sans;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(https://source.unsplash.com/hNvr4nqFIcQ/2500x1800);
+  background-size: cover;
+}
+audio {
+    display: none;
+  }
+  
