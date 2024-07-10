@@ -1,6 +1,6 @@
-var padding = {top:10, right:40, bottom:0, left:0},
-            w = 450 - padding.left - padding.right,
-            h = 450 - padding.top  - padding.bottom,
+var padding = {top:20, right:40, bottom:0, left:0},
+            w = 370 - padding.left - padding.right,
+            h = 370 - padding.top  - padding.bottom,
             r = Math.min(w, h)/2,
             rotation = 0,
             oldrotation = 0,
@@ -10,12 +10,12 @@ var padding = {top:10, right:40, bottom:0, left:0},
             //randomNumbers = getRandomNumbers();
         //http://osric.com/bingo-card-generator/?title=HTML+and+CSS+BINGO!&words=padding%2Cfont-family%2Ccolor%2Cfont-weight%2Cfont-size%2Cbackground-color%2Cnesting%2Cbottom%2Csans-serif%2Cperiod%2Cpound+sign%2C%EF%B9%A4body%EF%B9%A5%2C%EF%B9%A4ul%EF%B9%A5%2C%EF%B9%A4h1%EF%B9%A5%2Cmargin%2C%3C++%3E%2C{+}%2C%EF%B9%A4p%EF%B9%A5%2C%EF%B9%A4!DOCTYPE+html%EF%B9%A5%2C%EF%B9%A4head%EF%B9%A5%2Ccolon%2C%EF%B9%A4style%EF%B9%A5%2C.html%2CHTML%2CCSS%2CJavaScript%2Cborder&freespace=true&freespaceValue=Web+Design+Master&freespaceRandom=false&width=5&height=5&number=35#results
         var data = [
-                    {"label":"Flat 5% Discount",  "value":5,  "question":""}, // padding
-                    {"label":"Flat 8% Discount",  "value":8,  "question":""}, //font-family
-                    {"label":"Flat 12% Discount",  "value":12,  "question":""}, //color
-                    {"label":"Flat 16% Discount",  "value":16,  "question":""}, //font-weight
-                    {"label":"Flat 20% Discount",  "value":20,  "question":""}, //font-size
-                    {"label":"Better Luck next time!",  "value":0,  "question":""} //background-color
+                    {"label":"5% Discount",  "value":5,  "question":""}, // padding
+                    {"label":"8% Discount",  "value":8,  "question":""}, //font-family
+                    {"label":"12% Discount",  "value":12,  "question":""}, //color
+                    {"label":"16% Discount",  "value":16,  "question":""}, //font-weight
+                    {"label":"20% Discount",  "value":20,  "question":""}, //font-size
+                    {"label":"No Discount",  "value":0,  "question":""} //background-color
                     
         ];
         var svg = d3.select('#chart')
@@ -47,10 +47,10 @@ var padding = {top:10, right:40, bottom:0, left:0},
                 d.innerRadius = 0;
                 d.outerRadius = r;
                 d.angle = (d.startAngle + d.endAngle)/2;
-                return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")translate(" + (d.outerRadius -10) +")";
+                return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")translate(" + (d.outerRadius - 5) +")";
             })
             .attr("text-anchor", "end")
-            .text( function(d, i) {
+            .html( function(d, i) {
                 return data[i].label;
             });
         container.on("click", spin);
@@ -122,7 +122,7 @@ var padding = {top:10, right:40, bottom:0, left:0},
         
         //make arrow
         svg.append("g")
-            .attr("transform", "translate(" + (w + padding.left + padding.right) + "," + ((h/2)+padding.top) + ")")
+            .attr("transform", "translate(" + (w + 0 + 16) + "," + ((h/2)+padding.top) + ")")
             .append("path")
             .attr("d", "M-" + (r*.15) + ",0L0," + (r*.05) + "L0,-" + (r*.05) + "Z")
             .style({"fill":"black"});
@@ -130,15 +130,15 @@ var padding = {top:10, right:40, bottom:0, left:0},
         container.append("circle")
             .attr("cx", 0)
             .attr("cy", 0)
-            .attr("r", 60)
-            .style({"fill":"white","cursor":"pointer"});
+            .attr("r", 30)
+            .style({"fill":"gray","cursor":"pointer"});
         //spin text
         container.append("text")
             .attr("x", 0)
-            .attr("y", 15)
+            .attr("y", 4)
             .attr("text-anchor", "middle")
             .text("SPIN")
-            .style({"font-weight":"bold", "font-size":"30px"});
+            .style({"font-weight":"bold", "font-size":"16px","color":"white"});
         
         
         function rotTween(to) {
