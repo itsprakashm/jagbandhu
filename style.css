@@ -103,9 +103,9 @@ span {
 
 .box1 .span2 b {
   position: absolute;
-  top: 25%;
-  right: 57%;
-  transform: rotate(-130deg);
+  top: 23%;
+  right: 55%;
+  transform: rotate(-125deg);
 }
 
 .box1 .span3 b {
@@ -139,9 +139,9 @@ span {
 
 .box2 .span2 b {
   position: absolute;
-  top: 20%;
-  right: 60%;
-  transform: rotate(-130deg);
+  top: 22%;
+  right: 54%;
+  transform: rotate(-120deg);
   text-align: center;
 }
 
@@ -154,15 +154,15 @@ span {
 
 .box2 .span4 b {
   position: absolute;
-  top: 27%;
-  right: 20%;
-  transform: rotate(310deg);
+  top: 24%;
+  right: 12%;
+  transform: rotate(325deg);
 }
 
 .box2 .span5 b {
   position: absolute;
   top: 35%;
-  right: 10%;
+  right: 4%;
   transform: rotate(-20deg);
   text-align: center;
 }

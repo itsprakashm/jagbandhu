@@ -19,15 +19,15 @@ function shuffle(array) {
 }
 
 function spin() {
-  let cookieitem = getCookie("selectedItem");
-  if (cookieitem != "") {
-    swal(
-      "Congratulations",
-      "You Won The " + cookieitem + ".",
-      "success"
-    );
-    return false;
-  }
+  // let cookieitem = getCookie("selectedItem");
+  // if (cookieitem != "") {
+  //   swal(
+  //     "Congratulations",
+  //     "You Won The " + cookieitem + ".",
+  //     "success"
+  //   );
+  //   return false;
+  // }
   // Play the sound
   wheel.play();
   // Inisialisasi variabel
